@@ -11,6 +11,40 @@ html {
 }
 
 body {
-  color: $yellow;
-  background: $violet;
+  background: #a2ff8f;
+}
+h1{
+  text-align: center;
+  color: #24c7e1;
+
+}
+
+.bottle{
+  display: block;
+  margin: 0 auto;
+  width: 160px;
+}
+
+.button{
+  display: block;
+  margin: auto;
+  margin-top: 20px;
+  border: none;
+  border-radius: 20px;
+  width: 140px;
+  height: 30px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.removeButton{
+  display: block;
+  margin: 5px auto;
+  border: none;
+  font-size: 14px;
+  padding: 0px;
+  background: none;
+  text-decoration:underline;
+  cursor: pointer;
+
 }
