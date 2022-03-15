@@ -84,7 +84,7 @@ removeBottle.addEventListener('click', function () {
     localStorage.setItem(actualDay.toDateString(), bottle.toString());
   } else 
   alert(`You can't remove glass in other days!`)
-});
+}); 
 
 
 
