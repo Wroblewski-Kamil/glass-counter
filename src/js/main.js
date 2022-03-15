@@ -73,7 +73,8 @@ addBottle.addEventListener('click', function () {
   if (actualDay.toDateString() == thisDay.toDateString()) {
     ++bottle;
     localStorage.setItem(actualDay.toDateString(), bottle.toString());
-  }
+  } else 
+  alert(`You can't add glass in other days!`)
 });
 
 removeBottle.addEventListener('click', function () {
