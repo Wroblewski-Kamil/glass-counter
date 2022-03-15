@@ -15,6 +15,7 @@ if ('serviceWorker' in navigator) {
 }
 
 // place your code below
+
 console.log(`Hello world!`);
 
 const thisDay = new Date();
@@ -40,22 +41,21 @@ if (localStorage.getItem(thisDay.toDateString()) === null) {
 
 addBottle.addEventListener('click', function(){
    ++bottle
-   console.log(bottle)
    localStorage.setItem(thisDay.toDateString(), bottle.toString());
 });
 
 removeBottle.addEventListener('click', function(){
   if (bottle > 0)
   --bottle
-  console.log(bottle)
   localStorage.setItem(thisDay.toDateString(), bottle.toString());
 });
 
 prevButton.addEventListener('click', function(){
-  actualDay = prevDay;
+  actualDay = new Date().setDate(actualDay.getDate() --);
   console.log(new Date(actualDay).toDateString())
 })
-console.log(actualDay.toDateString())
+
+
 // switch (bottle) {
 //   case 0:
 //     console.log('nie piłeś dziś wody');
