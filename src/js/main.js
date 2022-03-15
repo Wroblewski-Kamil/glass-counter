@@ -18,7 +18,7 @@ if ('serviceWorker' in navigator) {
 
 console.log(`Hello world!`);
 
-const thisDay = new Date();
+var thisDay = new Date();
 var actualDay = new Date();
 var nextDay = new Date().setDate(actualDay.getDate() + 1);
 var prevDay = new Date().setDate(actualDay.getDate() - 1);
@@ -41,31 +41,9 @@ if (localStorage.getItem(actualDay.toDateString()) === null) {
   bottle = +localStorage.getItem(actualDay.toDateString());
 }
 
-addBottle.addEventListener('click', function () {
-  ++bottle;
-  localStorage.setItem(actualDay.toDateString(), bottle.toString());
-});
-
-removeBottle.addEventListener('click', function () {
-  if (bottle > 0)
-  --bottle;
-  localStorage.setItem(actualDay.toDateString(), bottle.toString());
-});
 
 prevButton.addEventListener('click', function () {
   actualDay = new Date(new Date().setDate(actualDay.getDate() - 1));
-  console.log(new Date(actualDay).toDateString());
-  if (localStorage.getItem(actualDay.toDateString()) === null) {
-    bottle = 0;
-  localStorage.setItem(actualDay.toDateString(), bottle);
-} else {
-  bottle = +localStorage.getItem(actualDay.toDateString());
-}
-
-});
-
-nextButton.addEventListener('click', function () {
-  actualDay = new Date(new Date().setDate(actualDay.getDate() + 1));
   console.log(new Date(actualDay).toDateString());
   if (localStorage.getItem(actualDay.toDateString()) === null) {
     bottle = 0;
@@ -73,8 +51,42 @@ nextButton.addEventListener('click', function () {
   } else {
     bottle = +localStorage.getItem(actualDay.toDateString());
   }
-  
+
 });
+
+nextButton.addEventListener('click', function () {
+  actualDay = new Date(new Date().setDate(actualDay.getDate() + 1));
+  console.log(new Date(actualDay).toDateString());
+  console.log(thisDay.toDateString());
+  console.log(actualDay.toDateString());
+
+  if (localStorage.getItem(actualDay.toDateString()) === null) {
+    bottle = 0;
+    localStorage.setItem(actualDay.toDateString(), bottle);
+  } else {
+    bottle = +localStorage.getItem(actualDay.toDateString());
+  }
+
+});
+
+addBottle.addEventListener('click', function () {
+  if (actualDay.toDateString() == thisDay.toDateString()) {
+    ++bottle;
+    localStorage.setItem(actualDay.toDateString(), bottle.toString());
+  }
+});
+
+removeBottle.addEventListener('click', function () {
+  if (actualDay.toDateString() == thisDay.toDateString()) {
+    if (bottle > 0)
+      --bottle;
+    localStorage.setItem(actualDay.toDateString(), bottle.toString());
+  } else 
+  alert(`You can't remove glass in other days!`)
+});
+
+
+
 
 
 // switch (bottle) {
