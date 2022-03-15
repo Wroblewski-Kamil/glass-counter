@@ -33,6 +33,7 @@ const removeBottle = document.querySelector('.removeButton--JS');
 const prevButton = document.querySelector('.prevButton--JS');
 const nextButton = document.querySelector('.nextButton--JS');
 var bottle = 0;
+
 if (localStorage.getItem(thisDay.toDateString()) === null) {
   localStorage.setItem(thisDay.toDateString(), bottle);
   } else {
@@ -40,20 +41,25 @@ if (localStorage.getItem(thisDay.toDateString()) === null) {
   }
 
 addBottle.addEventListener('click', function(){
-   ++bottle
+   ++bottle;
    localStorage.setItem(thisDay.toDateString(), bottle.toString());
 });
 
 removeBottle.addEventListener('click', function(){
-  if (bottle > 0)
-  --bottle
+  if (bottle > 0);
+  --bottle;
   localStorage.setItem(thisDay.toDateString(), bottle.toString());
 });
 
 prevButton.addEventListener('click', function(){
-  actualDay = new Date().setDate(actualDay.getDate() --);
-  console.log(new Date(actualDay).toDateString())
-})
+  actualDay = new Date(new Date().setDate(actualDay.getDate() - 1));
+  console.log(new Date(actualDay).toDateString());
+});
+
+nextButton.addEventListener('click', function(){
+  actualDay = new Date(new Date().setDate(actualDay.getDate() + 1));
+  console.log(new Date(actualDay).toDateString());
+});
 
 
 // switch (bottle) {
