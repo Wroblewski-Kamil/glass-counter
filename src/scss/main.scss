@@ -12,6 +12,7 @@ html {
 
 body {
   background: #a2ff8f;
+  height: 100vh;
 }
 h1{
   text-align: center;
@@ -22,16 +23,49 @@ h1{
 .bottle{
   display: block;
   margin: 0 auto;
-  width: 160px;
+  max-width: 200px;
 }
+.flex{
+  margin-top: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-.button{
-  display: block;
-  margin: auto;
-  margin-top: 20px;
+}
+.button {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  margin: 0 5px;
+
+  height: 30px;
+  width: 30px;
   border: none;
   border-radius: 20px;
-  width: 140px;
+}
+.arrow__button {
+  background-color: transparent;
+  height: 12px;
+  width: 12px;
+}
+
+.arrow__button--LEFT {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+  border-left: 1px solid rgba(0, 0, 0, 0.3);
+  transform: translateX(25%) rotate(45deg);
+}
+
+.arrow__button--RIGHT {
+  border-right: 1px solid rgba(0, 0, 0, 0.3);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  transform: translateX(-25%) rotate(45deg);
+}
+
+.addButton{
+  display: block;
+  border: none;
+  border-radius: 20px;
+  width: 120px;
   height: 30px;
   font-size: 20px;
   cursor: pointer;

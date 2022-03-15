@@ -35,7 +35,7 @@
   <body>
     <h1>Glass counter</h1>
     <svg class="bottle" width="140px" height="420px" viewBox="0 0 140 420" xmlns="http://www.w3.org/2000/svg">
-      <path class="waterFill" style="fill: #24c8e100;" d="M 25.901 71.109 L 115.741 70.392 L 92.071 37.396 L 97.989 28.43 L 96.554 6.971 L 89.023 4.64 L 56.386 4.64 L 44.551 5.358 L 41.144 22.752 L 43.116 27.056 L 46.344 32.794 L 50.11 34.049 L 42.758 42.836 C 42.758 42.836 25.901 70.99 25.901 71.109 Z"/>
+      <path style="fill: #24c8e100;" d="M 25.901 71.109 L 115.741 70.392 L 92.071 37.396 L 97.989 28.43 L 96.554 6.971 L 89.023 4.64 L 56.386 4.64 L 44.551 5.358 L 41.144 22.752 L 43.116 27.056 L 46.344 32.794 L 50.11 34.049 L 42.758 42.836 C 42.758 42.836 25.901 70.99 25.901 71.109 Z"/>
       <path style="fill: #24c8e100;" d="M 26.977 69.555 L 115.742 69.555 L 130.267 96.633 L 134.75 139.849 L 134.391 141.822 L 4.024 141.643 L 5.458 105.778 L 26.977 69.555 Z"/>
       <path style="fill: #24c8e100;" d="M 6.355 139.929 L 132.777 139.929 L 133.495 210.044 L 5.996 210.223 L 6.355 139.929 Z"/>
       <path style="fill: #24c8e100;" d="M 5.817 208.669 L 136.005 208.852 L 134.212 280.398 L 4.383 280.216 L 5.817 208.669 Z"/>
@@ -65,8 +65,19 @@
       <g transform="matrix(1, 0, 0, 1, 66.854292, -59.772954)"/>
       <g transform="matrix(1, 0, 0, 1, 66.854292, -59.772954)"/>
     </svg>
-    <button class="button">Add glass</button>
-    <button class="removeButton">Remove glass</button>
+    <div class="flex">
+      <button class="button prevButton--JS">
+        <div class="arrow__button arrow__button--LEFT"></div>
+      </button>
+    <button class="addButton addButton--JS">Add glass</button>
+    <button class="button nextButton--JS">
+      <div class="arrow__button arrow__button--RIGHT"></div>
+    </button>
+    </div>
+
+
+    <button class="removeButton removeButton--JS  ">Remove glass</button>
+ 
 
     <script  src="js/main.js"></script>
   </body>
