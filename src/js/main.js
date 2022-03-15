@@ -3,11 +3,11 @@
 // service worker registration - remove if you're not going to use it
 
 if ('serviceWorker' in navigator) {
-  window.addEventListener('load', function() {
-    navigator.serviceWorker.register('serviceworker.js').then(function(registration) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('serviceworker.js').then(function (registration) {
       // Registration was successful
       console.log('ServiceWorker registration successful with scope: ', registration.scope);
-    }, function(err) {
+    }, function (err) {
       // registration failed :(
       console.log('ServiceWorker registration failed: ', err);
     });
@@ -23,8 +23,8 @@ var actualDay = new Date();
 var nextDay = new Date().setDate(actualDay.getDate() + 1);
 var prevDay = new Date().setDate(actualDay.getDate() - 1);
 console.log(`Today is ${thisDay.toDateString()}`);
-console.log(new Date(prevDay).toDateString()); 
-console.log(new Date(nextDay).toDateString()); 
+console.log(new Date(prevDay).toDateString());
+console.log(new Date(nextDay).toDateString());
 
 
 
@@ -34,31 +34,46 @@ const prevButton = document.querySelector('.prevButton--JS');
 const nextButton = document.querySelector('.nextButton--JS');
 var bottle = 0;
 
-if (localStorage.getItem(thisDay.toDateString()) === null) {
-  localStorage.setItem(thisDay.toDateString(), bottle);
-  } else {
-    bottle = +localStorage.getItem(thisDay.toDateString());
-  }
+if (localStorage.getItem(actualDay.toDateString()) === null) {
+  bottle = 0;
+  localStorage.setItem(actualDay.toDateString(), bottle);
+} else {
+  bottle = +localStorage.getItem(actualDay.toDateString());
+}
 
-addBottle.addEventListener('click', function(){
-   ++bottle;
-   localStorage.setItem(thisDay.toDateString(), bottle.toString());
+addBottle.addEventListener('click', function () {
+  ++bottle;
+  localStorage.setItem(actualDay.toDateString(), bottle.toString());
 });
 
-removeBottle.addEventListener('click', function(){
-  if (bottle > 0);
+removeBottle.addEventListener('click', function () {
+  if (bottle > 0)
   --bottle;
-  localStorage.setItem(thisDay.toDateString(), bottle.toString());
+  localStorage.setItem(actualDay.toDateString(), bottle.toString());
 });
 
-prevButton.addEventListener('click', function(){
+prevButton.addEventListener('click', function () {
   actualDay = new Date(new Date().setDate(actualDay.getDate() - 1));
   console.log(new Date(actualDay).toDateString());
+  if (localStorage.getItem(actualDay.toDateString()) === null) {
+    bottle = 0;
+  localStorage.setItem(actualDay.toDateString(), bottle);
+} else {
+  bottle = +localStorage.getItem(actualDay.toDateString());
+}
+
 });
 
-nextButton.addEventListener('click', function(){
+nextButton.addEventListener('click', function () {
   actualDay = new Date(new Date().setDate(actualDay.getDate() + 1));
   console.log(new Date(actualDay).toDateString());
+  if (localStorage.getItem(actualDay.toDateString()) === null) {
+    bottle = 0;
+    localStorage.setItem(actualDay.toDateString(), bottle);
+  } else {
+    bottle = +localStorage.getItem(actualDay.toDateString());
+  }
+  
 });
 
 
