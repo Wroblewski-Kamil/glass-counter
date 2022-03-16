@@ -1,12 +1,14 @@
 @import "_normalize";
 @import "_variables";
-
+@import url("https://fonts.googleapis.com/css2?family=Righteous&display=swap");
 
 html {
   box-sizing: border-box;
 }
 
-*, *:before, *:after {
+*,
+*:before,
+*:after {
   box-sizing: inherit;
 }
 
@@ -14,23 +16,21 @@ body {
   background: #a2ff8f;
   height: 100vh;
 }
-h1{
+h1 {
   text-align: center;
-  color: #24c7e1;
-
+  color: #035956;
 }
 
-.bottle{
+.bottle {
   display: block;
   margin: 0 auto;
   max-width: 200px;
 }
-.flex{
+.flex {
   margin-top: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
-
 }
 .button {
   align-items: center;
@@ -42,6 +42,7 @@ h1{
   width: 30px;
   border: none;
   border-radius: 20px;
+  cursor: pointer;
 }
 .arrow__button {
   background-color: transparent;
@@ -61,7 +62,7 @@ h1{
   transform: translateX(-25%) rotate(45deg);
 }
 
-.addButton{
+.addButton {
   display: block;
   border: none;
   border-radius: 20px;
@@ -71,14 +72,37 @@ h1{
   cursor: pointer;
 }
 
-.removeButton{
+.removeButton {
   display: block;
   margin: 5px auto;
   border: none;
   font-size: 14px;
   padding: 0px;
   background: none;
-  text-decoration:underline;
+  text-decoration: underline;
   cursor: pointer;
+}
+.counter {
+  font-family: "Righteous", cursive;
+  position: absolute;
+  display: block;
+  width: 120px;
+  height: 76px;
+  top: 210px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 100px;
+  text-align: center;
+  color: #035956;
+}
 
+.dateBox{
+  margin-top: 3px;
+  text-align: center;
+}
+.dateChecker{
+  text-align: center;
+  font-size: 10px;
 }
